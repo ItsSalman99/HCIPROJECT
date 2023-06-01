@@ -1,0 +1,146 @@
+//####################
+// START VARIABALES
+// #####################
+:root {
+  --primary-clr: #e46c3f;
+  --primary-rgb-clr: 228, 108, 63;
+  --primary-filter: invert(61%) sepia(20%) saturate(4278%) hue-rotate(331deg)
+    brightness(91%) contrast(97%);
+  --secondary-clr: #00aeef;
+  --secondary-rgb-clr: 0, 174, 239;
+  --section-padding: 100px 0;
+  --border-clr: #f2f1f1;
+  --black-btn-clr: #363232;
+  --black-clr-1: #363232;
+  --anker-hover-clr: #363232;
+}
+
+.primary-bg {
+  background: var(--primary-clr) !important;
+}
+
+.primary-text {
+  color: var(--primary-clr) !important;
+}
+
+.primary-anchor {
+  color: var(--primary-clr) !important;
+  &:hover {
+    color: var(--anker-hover-clr) !important;
+  }
+}
+
+.secondary-anchor {
+  color: var(--secondary-clr) !important;
+  &:hover {
+    color: var(--primary-clr) !important;
+  }
+}
+.gray-anchor {
+  color: #808080;
+  font-size: 15px;
+  &:hover {
+    color: var(--primary-clr);
+  }
+}
+.black-anchor,
+.dark-anchor {
+  color: var(--black-clr-1);
+  &:hover {
+    color: var(--primary-clr);
+  }
+}
+
+.secondary-bg {
+  background: var(--secondary-clr) !important;
+}
+
+.secondary-text {
+  color: var(--secondary-clr) !important;
+}
+
+// ACTIVE BTN
+.active-btn {
+  background: var(--primary-clr) !important;
+  color: white !important;
+}
+
+.active-text {
+  color: var(--primary-clr) !important;
+}
+
+// END ACTIVE BTN
+//####################
+// END VARIABALES
+// #####################
+//####################
+// START IMPORT FILES
+// #####################
+@import "assets/sass/_all_pages";
+@import "assets/sass/_all_components";
+//####################
+// END IMPORT FILES
+// #####################
+.filter_price {
+  p {
+    font-size: 14px;
+  }
+}
+.filter_price .ui-widget.ui-widget-content {
+  border: 0;
+  border-radius: 10px;
+  background-color: #ddd;
+  height: 7px;
+  margin-bottom: 20px;
+}
+.ui-slider-horizontal .ui-slider-range {
+  top: 0;
+  height: 100%;
+}
+.filter_price .ui-slider .ui-slider-range {
+  background-color: var(--primary-clr);
+  border-radius: 0;
+}
+.filter_price .ui-slider .ui-slider-handle {
+  cursor: pointer;
+  background-color: var(--primary-clr);
+  border-radius: 100%;
+  border: 0;
+  height: 19px;
+  top: -7px;
+  width: 19px;
+  margin: 0;
+  box-shadow: 0px 2px 5px 0px #0000002b, inset 0 0 0px 5px white;
+}
+.price_range {
+  color: #292b2c;
+}
+#flt_price {
+  margin-left: 5px;
+  font-weight: 600;
+}
+.enterprice {
+  input {
+    min-height: 44px !important;
+    width: 80px;
+  }
+}
+::-webkit-scrollbar {
+  width: 9px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #929292;
+  height: 60px;
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+::-webkit-scrollbar-track {
+  background-color: #e2e2e2;
+}
+::selection {
+  color: #fff;
+  background: #787878;
+  text-shadow: none;
+}

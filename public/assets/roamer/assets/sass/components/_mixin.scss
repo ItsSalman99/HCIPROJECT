@@ -1,0 +1,244 @@
+//####################
+// START MIXIN
+// #####################
+@mixin Mixinfontsize($fontSize, $fontClr, $fontWeight, $textTransform, $lineHeight) {
+    font-size: $fontSize;
+    color: $fontClr;
+    font-weight: $fontWeight;
+    text-transform: $textTransform;
+    line-height: $lineHeight;
+}
+
+@mixin position($postion, $top, $right, $bottom, $left, $width, $height, $background) {
+    position: $postion;
+    top: $top;
+    right: $right;
+    bottom: $bottom;
+    left: $left;
+    width: $width;
+    height: $height;
+    background: $background;
+}
+
+@mixin div-content-before($content, $bfrCDwidth, $bfrCDheight, $bfrCDposition, $bfrCDtop, $bfrCDright, $bfrCDbottom, $bfrCDleft, $bfrCDbackground) {
+    content: $content;
+    width: $bfrCDwidth;
+    height: $bfrCDheight;
+    position: $bfrCDposition;
+    top: $bfrCDtop;
+    right: $bfrCDright;
+    bottom: $bfrCDbottom;
+    left: $bfrCDleft;
+    background: $bfrCDbackground;
+}
+
+// @mixin div-content-after($content, $afrCDwidth, $afrCDheight, $afrCDposition, $afrCDtop, $afrCDright, $afrCDbottom, $afrCDleft, $afrCDbackground) {
+//     content: $content;
+//     width: $afrCDwidth;
+//     height: $afrCDheight;
+//     position: $afrCDposition;
+//     top: $afrCDtop;
+//     right: $afrCDright;
+//     bottom: $afrCDbottom;
+//     left: $afrCDleft;
+//     background: $afrCDbackground;
+// }
+@mixin animation($animation) {
+    animation: $animation;
+    -webkit-animation: $animation;
+}
+
+@mixin border-radius($borderRadiusValue) {
+    border-radius: $borderRadiusValue;
+    -webkit-border-radius: $borderRadiusValue;
+    -moz-border-radius: $borderRadiusValue;
+    -ms-border-radius: $borderRadiusValue;
+    -o-border-radius: $borderRadiusValue;
+}
+
+@mixin backface($backfaceValue) {
+    backface-visibility: $backfaceValue;
+    -webkit-backface-visibility: $backfaceValue;
+}
+
+@mixin transition($transition) {
+    transition: $transition;
+    -webkit-transition: $transition;
+    -moz-transition: $transition;
+    -ms-transition: $transition;
+    -o-transition: $transition;
+}
+
+@mixin transform($transfrom) {
+    transform: $transfrom;
+    -webkit-transform: $transfrom;
+    -moz-transform: $transfrom;
+    -ms-transform: $transfrom;
+    -o-transform: $transfrom;
+}
+
+@mixin sticky-top {
+    .nav-fixed {
+        box-shadow: 0 0 5px rgba(0, 0, 0, 0.15);
+        position: fixed !important;
+        right: 0;
+        left: 0;
+        top: 0;
+        z-index: 1041;
+        animation-fill-mode: none;
+        animation: slideInDown 1s cubic-bezier(0.23, 1, 0.32, 1);
+        -webkit-animation: slideInDown 1s cubic-bezier(0.23, 1, 0.32, 1);
+    }
+}
+
+@mixin box-shadow {
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.08);
+}
+
+@mixin toggler {
+    .my-toggler {
+        border: 0 !important;
+        background: transparent;
+        span {
+            width: 25px;
+            height: 2px;
+            background-color: #222222;
+            display: block;
+            &:nth-child(1) {
+                margin: 3px auto;
+            }
+            &:nth-child(2) {
+                width: 18px;
+                margin-left: auto;
+            }
+        }
+    }
+}
+
+@mixin social-icon {
+    ul {
+        li {
+            display: inline-block;
+            a {
+                font-size: 14px;
+                color: white;
+            }
+        }
+    }
+}
+
+@function set-text-color($colorinvert) {
+    @if (lightness($colorinvert)>70) {
+        @return #333;
+    }
+    @else {
+        @return #fff;
+    }
+}
+
+// $colors:((fafafa, #fafafa), (3a3a3a, #3a3a3a), (3d3d3d, #3d3d3d), (f1f2f7, #f1f2f7));
+// @each $class,
+// $color in $colors {
+//     .bg-#{$class} {
+//         background: $color;
+//     }
+// }
+@mixin background-set($colorinvert) {
+    background: $colorinvert;
+    color: set-text-color($colorinvert);
+}
+
+// ###########################
+// start image path
+// ###########################
+$imagepathurl:'/assets/images/';
+@function imagepath($url) {
+    @return url($imagepathurl + $url);
+}
+
+// ###########################
+// end image path
+// ###########################
+// ###########################
+// start triangle shapes
+// ###########################
+@mixin triangle($size, $color, $direction) {
+    height: 0;
+    width: 0;
+    border-color: transparent;
+    border-style: solid;
+    border-width: $size;
+    @if $direction==up {
+        border-bottom-color: $color;
+    }
+    @else if $direction==right {
+        border-left-color: $color;
+    }
+    @else if $direction==down {
+        border-top-color: $color;
+    }
+    @else if $direction==left {
+        border-right-color: $color;
+    }
+    @else {
+        @error "Unknown direction #{$direction}.";
+    }
+}
+
+// ###########################
+// end triangle shapes
+// ###########################
+// ###########################
+// start social media icon bg
+// ###########################
+$social-media-bg: (facebook, #3b5999),
+(twitter, #55acee),
+(instagram, #e4405f),
+(youtube, #cd201f),
+(linkedin, #0077B5),
+(google-plus, #dd4b39),
+(pinterest, #bd081c),
+(skype, #00AFF0);
+@each $social-name,
+$social-colors in $social-media-bg {
+    .social-media-icon-bg i[class$=#{$social-name}] {
+        background: $social-colors;
+        width: 40px;
+        height: 40px;
+        text-align: center;
+        line-height: 40px;
+        display: inline-block;
+        color: white;
+    }
+}
+
+// ###########################
+// start social media icon text
+// ###########################
+$social-media-color: (facebook, #3b5999),
+(twitter, #55acee),
+(instagram, #e4405f),
+(youtube, #cd201f),
+(linkedin, #0077B5),
+(google-plus, #dd4b39),
+(pinterest, #bd081c),
+(skype, #00AFF0);
+@each $social-name,
+$social-colors in $social-media-color {
+    .social-media-icon-color i[class$=#{$social-name}] {
+        color: $social-colors;
+    }
+}
+
+// @mixin grid($cols, $mrg) {
+//     float: left;
+//     margin-bottom: $mrg;
+//     margin-right: $mrg;
+//     width: ((100% - (($cols - 1) * $mrg)) / $cols);
+//     &:nth-child(#{$cols}n) {
+//         margin-right: 0;
+//     }
+// }
+//####################
+// END MIXIN
+// #####################

@@ -1,0 +1,265 @@
+// placeholder
+.placeholder-italic {
+  &::placeholder {
+    font-style: italic;
+  }
+}
+// caret
+.arrow-none {
+  &::after {
+    display: none;
+  }
+}
+// rating
+
+.rating-size {
+  li {
+    i {
+      font-size: 18px;
+    }
+  }
+}
+.rating-clr {
+  li {
+    i {
+      color: #ffb600;
+    }
+  }
+}
+i.noRating-star {
+  color: black !important;
+  opacity: 0.2;
+}
+
+// comments area
+
+.comment-box {
+  margin-top: 2rem;
+  padding-bottom: 2rem;
+  border-bottom: 1px solid var(--border-clr);
+
+  .shorrname {
+    width: 60px;
+    height: 60px;
+    @include border-radius(50%);
+    background: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+  }
+}
+
+// modal header
+.modal-header {
+  position: relative;
+
+  background: #f9f9f9;
+  p {
+    margin: 0;
+  }
+  button {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+  }
+}
+
+// ################## START STARS RATING AREA  ######################
+.cover-rating {
+  .rating {
+    border: none;
+    float: left;
+  }
+  .rating > input {
+    display: none;
+  }
+  .rating > label:before {
+    margin: 5px;
+    font-size: 2em;
+    font-family: "Material Icons";
+    display: inline-block;
+    content: "\e885";
+  }
+  .rating > .half:before {
+    content: "\e885";
+    position: absolute;
+  }
+  .rating > label {
+    color: #e5e5e5;
+    float: right;
+    cursor: pointer;
+    margin-bottom: 0;
+  }
+  /***** CSS Magic to Highlight Stars on Hover *****/
+  .rating>input:checked~label,
+  /* show gold star when clicked */
+  .rating:not(:checked)>label:hover,
+  /* hover current star */
+  .rating:not(:checked)>label:hover~label {
+    color: #ffb600;
+  }
+  /* hover previous stars in list */
+  .rating>input:checked+label:hover,
+  /* hover current star when changing rating */
+  .rating>input:checked~label:hover,
+  .rating>label:hover~input:checked~label,
+  /* lighten current selection */
+  .rating>input:checked~label:hover~label {
+    color: rgba($color: #ffb600, $alpha: 0.5);
+  }
+}
+
+// ################## END STARS RATING AREA  ######################
+
+// cart increement
+.cover-increment-number {
+  .btn {
+    background: #e5e5e5;
+    cursor: pointer;
+    font-size: 21px;
+    padding: 0px;
+    line-height: 18px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  .dec {
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+  }
+  .inc {
+    border-top-left-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  input {
+    width: 40px;
+    text-align: center;
+    min-height: 32px !important;
+    border: 1px solid var(--border-clr);
+  }
+}
+
+// image to content
+.image-to-content {
+  img {
+    background: #f4f4f4;
+    width: 70px;
+    height: 70px;
+    object-fit: contain;
+    padding: 5px;
+    @include border-radius(6px);
+  }
+  ul {
+    li {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+      a:not(.btn-primary) {
+        width: auto;
+        min-width: auto;
+        max-width: 230px;
+        display: inline-block;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        text-transform: capitalize;
+      }
+    }
+  }
+}
+
+// align image right
+.align-image-right {
+  img {
+    position: absolute;
+    top: 50%;
+    right: 10px;
+    width: 17px;
+    @include transform(translateY(-50%));
+    opacity: 0.8;
+  }
+}
+
+// usergender
+.usergender {
+  label {
+    color: #ababab;
+    font-weight: 400;
+    cursor: pointer;
+  }
+  .form-check-input {
+    &:checked ~ label {
+      color: var(--black-clr-1);
+    }
+  }
+}
+
+// select arrow down
+.select-arrow-down {
+  position: relative;
+  background-image: url(assets/images/icons/arrow-down.svg) !important;
+  background-position: right 0.75rem center !important;
+  background-repeat: no-repeat !important;
+  background-size: 13px !important;
+}
+
+// fixed height 400
+.fixed-height-400,
+.fixed-height-700 {
+  height: 400px;
+  overflow-y: auto;
+  &::-webkit-scrollbar {
+    width: 2px;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: #1f1f1f;
+    height: 60px;
+    border-radius: 8px;
+  }
+  &::-webkit-scrollbar-track {
+    background-color: #e2e2e2;
+  }
+}
+.fixed-height-700 {
+  height: 700px;
+}
+// mobile search box result
+.search-result-box {
+  max-height: 405px;
+  overflow: hidden;
+  overflow-y: auto;
+}
+
+// canvas offset transition
+.offcanvas {
+  transition: transform 0.7s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+// side with padding slider
+.SideWithPadding {
+  @media screen and (min-width: 1440px) {
+    padding-left: 10rem;
+    padding-right: 0rem;
+  }
+  @media screen and (max-width: 1440px) {
+    padding-left: 5rem;
+    padding-right: 0rem;
+  }
+
+  @media screen and (max-width: 1024px) {
+    padding-left: 3rem;
+    padding-right: 0rem;
+  }
+  @media screen and (max-width: 576px) {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+}

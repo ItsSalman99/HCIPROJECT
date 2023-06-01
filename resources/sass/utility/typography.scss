@@ -1,0 +1,784 @@
+@import url(../../../css/fancybox/fancybox.css);
+@import "../components/_mixin";
+:root {
+  --input-padding: 15px;
+  --input-height: 54px;
+}
+
+html,
+body {
+  font-family: "Poppins", sans-serif !important;
+  font-weight: 500;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004) !important;
+  font-size: 14px;
+  transition: background 0.3s ease;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+  box-sizing: border-box;
+  outline: none;
+}
+
+ul,
+ol {
+  margin: 0 !important;
+  padding: 0 !important;
+  list-style: none;
+}
+
+a {
+  text-decoration: none !important;
+  transition: 0.1s;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.004);
+}
+
+svg {
+  transition: 0.1s;
+}
+
+section {
+  padding: var(--section-padding);
+  position: relative;
+}
+
+button:focus {
+  outline: none !important;
+  box-shadow: none !important;
+}
+
+p {
+  color: #7b7b7b;
+  font-weight: 400;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+small,
+li,
+label {
+  color: var(--heading-clr);
+}
+
+img {
+  width: 100%;
+  max-width: 100%;
+}
+
+i {
+  line-height: normal;
+}
+
+// form setting
+span {
+  font-size: inherit;
+}
+
+label {
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+input:not([type="checkbox"]):not([type="radio"]),
+select,
+textarea {
+  min-height: var(--input-height);
+}
+input[type="checkbox"] {
+  width: 18px;
+  height: 18px;
+  border: 1px solid #999999;
+  margin-top: 0;
+  margin-right: 10px;
+  border-radius: 3px !important;
+}
+input::-webkit-datetime-edit {
+  color: transparent;
+}
+input:focus::-webkit-datetime-edit {
+  color: #000;
+}
+input:valid::-webkit-datetime-edit {
+  color: #000;
+}
+select {
+  cursor: pointer;
+}
+.form-floating {
+  label {
+    opacity: 0.5;
+    font-weight: 400;
+  }
+}
+.select-box {
+  width: 100%;
+  @include border-radius(0.25rem);
+}
+.form-check-input {
+  border-color: #cdcdcd;
+  flex-shrink: 0;
+  &:checked {
+    background-color: var(--primary-clr);
+    border-color: var(--primary-clr) !important;
+  }
+  &:focus {
+    border-color: var(--primary-clr);
+    box-shadow: none;
+  }
+}
+input[type="radio"].form-check-input {
+  width: 19px;
+  height: 19px;
+  background-color: #cdcdcd;
+  background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='2' fill='%23fff'/%3e%3c/svg%3e");
+  border-color: #cdcdcd;
+  &:checked {
+    background-color: var(--primary-clr);
+    border-color: var(--primary-clr) !important;
+    box-shadow: 0px 2px 5px 0px #0000002b;
+  }
+  &:focus {
+    border-color: var(--primary-clr);
+  }
+}
+
+.form-group {
+  margin-bottom: 1.1rem;
+}
+
+.form-control,
+.select-box {
+  padding: 10px var(--input-padding);
+  background: white;
+  box-shadow: none;
+  border: 1px solid var(--border-clr);
+  &:focus {
+    color: #71748d;
+    background-color: #fff;
+    border-color: var(--primary-clr);
+    outline: 0;
+    box-shadow: none;
+    &::placeholder {
+      color: var(--primary-clr);
+    }
+    i {
+      color: var(--primary-clr);
+    }
+  }
+}
+
+// end form setting
+// table setting
+tbody,
+td,
+tfoot,
+th,
+thead,
+tr {
+  border-color: var(--border-clr);
+}
+
+// .table-hover>tbody>tr:hover>* {
+//     --bs-table-accent-bg: var(--table-hover-clr);
+//     color: var(--table-td-after-hover);
+// }
+.table > :not(:first-child) {
+  border-top: none;
+}
+
+// end table setting
+// ################## START CARD AREA  ######################
+.card {
+  transition: background 0.3s ease;
+  @include border-radius(10px);
+}
+
+// ################## END CARD AREA  ######################
+.column-spacing {
+  [class*="col-"] > div {
+    margin: 10px;
+  }
+}
+
+.content-spacing * + * {
+  margin-top: 2rem !important;
+}
+
+.collapsing {
+  height: 0;
+  overflow: hidden;
+  @include transition(0.2s);
+}
+
+// increment text
+.increment-text,
+.buy-color {
+  color: #219653 !important;
+}
+
+// decrement text
+.decrement-text,
+.sell-color {
+  color: #eb5757 !important;
+}
+
+// tittle effect
+.title-effect {
+  transform-style: preserve-3d;
+  perspective: 1000px;
+  &:hover {
+    i,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    span,
+    img {
+      @include transition(0.5s);
+      @include transform(translateZ(30px));
+    }
+  }
+}
+
+.hb-line {
+  width: 70px;
+  height: 5px;
+  background: var(--primary-clr);
+  display: block;
+  margin-block: 9px;
+  @include border-radius(50px);
+}
+
+// title setting
+.section-title {
+  font-size: 34px;
+  font-weight: 700;
+}
+
+.subtitle {
+  position: relative;
+  font-size: 17px;
+  font-weight: 500;
+  text-transform: uppercase;
+}
+
+.block-title {
+  font-size: 25px;
+  font-weight: 500;
+}
+
+.entry-title {
+  font-size: 20px;
+  font-weight: 500;
+}
+
+.single-title {
+  font-size: 30px;
+  font-weight: 600;
+}
+
+.cover-section-title {
+  p {
+    font-size: 18px;
+  }
+}
+
+// end title settings
+.caret-none {
+  &::after {
+    display: none;
+  }
+}
+.disc-items {
+  li {
+    list-style: disc;
+    margin-left: 1.5rem;
+  }
+}
+
+.decimal-items {
+  li {
+    list-style: decimal;
+    margin-left: 1.5rem;
+  }
+}
+
+.z-index1 {
+  z-index: 1;
+}
+
+// updonw animate
+.updown-animate {
+  animation: updownanimate 10s linear infinite;
+  @keyframes updownanimate {
+    0% {
+      @include transform(translateY(0));
+    }
+    50% {
+      @include transform(translateY(-5px));
+    }
+    100% {
+      @include transform(translateY(0px));
+    }
+  }
+}
+
+// shadow dots animate
+//   dark color loop
+@for $dark-bg-color from 1 through 9 {
+  .dark-bg-clr-0#{$dark-bg-color} {
+    background-color: #{"rgba(0,0,0,0.#{$dark-bg-color})"};
+  }
+}
+// white-color-loop
+@for $white-bg-color from 1 through 9 {
+  .white-bg-clr-0#{$white-bg-color} {
+    background-color: #{"rgba(248,248,248,0.#{$white-bg-color})"};
+  }
+}
+//   primary color loop
+@for $primary-bg-color from 1 through 9 {
+  .primary-bg-clr-0#{$primary-bg-color} {
+    background-color: rgba(var(--primary-rgb-clr), #{"0.#{$primary-bg-color}"});
+  }
+}
+@for $primary-bg-color from 1 through 9 {
+  .primary-bg-clr-00#{$primary-bg-color} {
+    background-color: rgba(
+      var(--primary-rgb-clr),
+      #{"0.0#{$primary-bg-color}"}
+    );
+  }
+}
+
+//   secondary color loop
+@for $secondary-bg-color from 1 through 9 {
+  .secondary-bg-clr-0#{$secondary-bg-color} {
+    background-color: rgba(
+      var(--secondary-rgb-clr),
+      #{"0.#{$secondary-bg-color}"}
+    );
+  }
+}
+
+// flex
+@for $i from 1 through 10 {
+  .flex-#{$i} {
+    flex: $i;
+  }
+}
+
+// border
+$borders: (
+  "top": #{var(--border-clr)},
+  "right": #{var(--border-clr)},
+  "bottom": #{var(--border-clr)},
+  "left": #{var(--border-clr)},
+);
+@each $keys, $val in $borders {
+  .border-#{$keys} {
+    border-#{$keys}: 1px solid $val !important;
+  }
+}
+
+.border {
+  border: 1px solid var(--border-clr) !important;
+}
+.primary-border {
+  border-color: var(--primary-clr) !important;
+}
+@for $i from 1 through 15 {
+  .padding-inline-#{$i}vw {
+    padding-inline: $i + vw !important;
+  }
+}
+
+@for $i from 1 through 15 {
+  .padding-block-#{$i}vw {
+    padding-block: $i + vw !important;
+  }
+}
+
+/*############################3
+      opacity
+ #########################3*/
+
+.opacity-1 {
+  opacity: 1 !important;
+}
+.hover-opacity-1 {
+  &:hover {
+    opacity: 1 !important;
+  }
+}
+
+@for $i from 1 through 9 {
+  .opacity-0#{$i} {
+    opacity: #{"0.#{$i}"} !important;
+  }
+}
+@for $i from 1 through 9 {
+  .hover-opacity-0#{$i} {
+    @include transition(0.2s);
+    &:hover {
+      opacity: #{"0.#{$i}"};
+    }
+  }
+}
+
+/*############################3
+      opacity
+ #########################3*/
+
+/*############################3
+      Start font weight
+ #########################3*/
+
+@for $i from 1 through 9 {
+  .font-weight-#{$i}00 {
+    font-weight: $i +#{"00"};
+  }
+}
+
+/*############################3
+      End font weight
+ #########################3*/
+
+/*############################3
+      Start border-radius
+ #########################3*/
+
+@for $i from 0 through 50 {
+  .border-radius-#{$i}px {
+    border-radius: $i +#{"px"};
+  }
+}
+
+/*############################3
+      End border-radius
+ #########################3*/
+
+$while-width: 5;
+@while $while-width <=100 {
+  .width-#{$while-width} {
+    width: $while-width +#{"%"};
+  }
+  $while-width: $while-width + 5;
+}
+
+$while-height: 10;
+@while $while-height <=100 {
+  .height-#{$while-height}vh {
+    height: $while-height + vh;
+  }
+  $while-height: $while-height + 10;
+}
+
+$while-height2: 10;
+@while $while-height2 <=400 {
+  .height-#{$while-height2}px {
+    height: $while-height2 + px;
+  }
+  $while-height2: $while-height2 + 5;
+}
+
+@for $i from 10 through 100 {
+  .font-#{$i}px {
+    font-size: $i + px;
+  }
+}
+
+// sm
+@media screen and (min-width: 576px) {
+  $while-width: 5;
+  @while $while-width <=100 {
+    .width-sm-#{$while-width} {
+      width: $while-width +#{"%"};
+    }
+    $while-width: $while-width + 5;
+  }
+  $while-height: 10;
+  @while $while-height <=100 {
+    .height-sm-#{$while-height}vh {
+      height: $while-height + vh;
+    }
+    $while-height: $while-height + 10;
+  }
+  $while-height2: 10;
+  @while $while-height2 <=400 {
+    .height-sm-#{$while-height2}px {
+      height: $while-height2 + px;
+    }
+    $while-height2: $while-height2 + 5;
+  }
+  @for $i from 10 through 100 {
+    .font-sm-#{$i}px {
+      font-size: $i + px;
+    }
+  }
+  @for $i from 1 through 15 {
+    .padding-inline-sm-#{$i}vw {
+      padding-inline: $i + vw !important;
+    }
+  }
+  @for $i from 1 through 15 {
+    .padding-block-sm-#{$i}vw {
+      padding-block: $i + vw !important;
+    }
+  }
+}
+
+// md
+@media screen and (min-width: 768px) {
+  $while-width: 5;
+  @while $while-width <=100 {
+    .width-md-#{$while-width} {
+      width: $while-width +#{"%"};
+    }
+    $while-width: $while-width + 5;
+  }
+  $while-height: 10;
+  @while $while-height <=100 {
+    .height-md-#{$while-height}vh {
+      height: $while-height + vh;
+    }
+    $while-height: $while-height + 10;
+  }
+  $while-height2: 10;
+  @while $while-height2 <=400 {
+    .height-md-#{$while-height2}px {
+      height: $while-height2 + px;
+    }
+    $while-height2: $while-height2 + 5;
+  }
+  @for $i from 10 through 100 {
+    .font-md-#{$i}px {
+      font-size: $i + px;
+    }
+  }
+  @for $i from 1 through 15 {
+    .padding-inline-md-#{$i}vw {
+      padding-inline: $i + vw !important;
+    }
+  }
+  @for $i from 1 through 15 {
+    .padding-block-md-#{$i}vw {
+      padding-block: $i + vw !important;
+    }
+  }
+}
+
+// lg
+@media screen and (min-width: 992px) {
+  $while-width: 5;
+  @while $while-width <=100 {
+    .width-lg-#{$while-width} {
+      width: $while-width +#{"%"};
+    }
+    $while-width: $while-width + 5;
+  }
+  $while-height: 10;
+  @while $while-height <=100 {
+    .height-lg-#{$while-height}vh {
+      height: $while-height + vh;
+    }
+    $while-height: $while-height + 10;
+  }
+  $while-height2: 10;
+  @while $while-height2 <=400 {
+    .height-lg-#{$while-height2}px {
+      height: $while-height2 + px;
+    }
+    $while-height2: $while-height2 + 5;
+  }
+  @for $i from 10 through 100 {
+    .font-lg-#{$i}px {
+      font-size: $i + px;
+    }
+  }
+  @for $i from 1 through 15 {
+    .padding-inline-lg-#{$i}vw {
+      padding-inline: $i + vw !important;
+    }
+  }
+  @for $i from 1 through 15 {
+    .padding-block-lg-#{$i}vw {
+      padding-block: $i + vw !important;
+    }
+  }
+}
+
+// xl
+@media screen and (min-width: 1200px) {
+  $while-width: 5;
+  @while $while-width <=100 {
+    .width-xl-#{$while-width} {
+      width: $while-width +#{"%"};
+    }
+    $while-width: $while-width + 5;
+  }
+  $while-height: 10;
+  @while $while-height <=100 {
+    .height-xl-#{$while-height}vh {
+      height: $while-height + vh;
+    }
+    $while-height: $while-height + 10;
+  }
+  $while-height2: 10;
+  @while $while-height2 <=400 {
+    .height-xl-#{$while-height2}px {
+      height: $while-height2 + px;
+    }
+    $while-height2: $while-height2 + 5;
+  }
+  @for $i from 10 through 100 {
+    .font-xl-#{$i}px {
+      font-size: $i + px;
+    }
+  }
+  @for $i from 1 through 15 {
+    .padding-inline-xl-#{$i}vw {
+      padding-inline: $i + vw !important;
+    }
+  }
+  @for $i from 1 through 15 {
+    .padding-block-xl-#{$i}vw {
+      padding-block: $i + vw !important;
+    }
+  }
+}
+
+/*the container must be positioned relative:*/
+.custom-select {
+  position: relative;
+  margin: auto;
+  margin-top: 0;
+  height: initial;
+  background: var(--card-clr);
+  padding: 0.375rem 0.75rem;
+  border: none;
+  border-radius: 0.25rem;
+  border: 1px solid var(--border-clr);
+  font-size: 15px;
+  min-width: 80px;
+  height: 56px;
+}
+
+.custom-select select {
+  display: none;
+}
+
+.select-selected {
+  border-bottom: 1px solid lightgrey;
+}
+
+/*style the arrow inside the select element:*/
+.select-selected:after {
+  position: absolute;
+  content: "";
+  top: 10px;
+  right: 10px;
+  width: 0;
+  height: 0;
+  border: 5px solid transparent;
+  border-color: black transparent transparent transparent;
+}
+
+/*point the arrow upwards when the select box is open (active):*/
+.select-selected.select-arrow-active:after {
+  border-color: transparent transparent black transparent;
+  top: 5px;
+}
+
+/*style the items (options), including the selected item:*/
+.select-selected {
+  color: inherit;
+  padding: 0 15px;
+  border: none;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-align: left;
+  text-transform: capitalize;
+  width: 100%;
+  color: var(--heading-clr);
+  position: absolute;
+  top: 50%;
+  left: 0;
+  -webkit-transform: translateY(-50%);
+  transform: translateY(-50%);
+  opacity: 0.5;
+}
+
+.select-items div {
+  color: inherit;
+  padding: 6px 16px;
+  border: none;
+  border-color: transparent transparent rgba(0, 0, 0, 0.1) transparent;
+  cursor: pointer;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  text-align: left;
+  text-transform: capitalize;
+  font-size: 14px;
+  font-weight: 500;
+}
+
+/*style items (options):*/
+.select-items {
+  position: absolute;
+  background-color: white;
+  border: 1px solid #e3e3e3;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 99;
+  visibility: visible;
+  opacity: 1;
+  padding: 11px;
+  transition: 0.2s;
+  -webkit-transition: 0.2s;
+  -moz-transition: 0.2s;
+  -ms-transition: 0.2s;
+  -o-transition: 0.2s;
+  margin-top: 10px;
+  border-radius: 6px;
+
+  min-width: 200px;
+  max-height: 200px;
+  overflow-y: auto;
+}
+
+// .select-items > div {
+//   color: #515151;
+// }
+
+/*hide the items when the select box is closed:*/
+.select-hide {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.select-items div:hover,
+.same-as-selected {
+  // background-color: var(--primary-clr);
+  color: var(--primary-clr) !important;
+}

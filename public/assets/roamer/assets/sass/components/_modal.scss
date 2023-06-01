@@ -1,0 +1,8 @@
+.modal-content {
+  border-radius: 13px !important;
+}
+@media screen and (min-width: 576px) {
+  .modal-dialog.modal-md {
+    max-width: 586px;
+  }
+}

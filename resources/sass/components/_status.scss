@@ -1,0 +1,107 @@
+%status {
+  background: #eeeeee;
+  color: #8c8c8c;
+  margin: 0;
+  padding: 5px 12px;
+  font-size: 13px;
+  border-radius: 5px;
+  text-align: center;
+}
+
+.pending-status,
+.draft-status,
+.notactive-status {
+  // width: 95px;
+  display: inline-block;
+  p {
+    @extend %status;
+  }
+}
+
+.feature-status {
+  display: inline-block;
+  p {
+    @extend %status;
+    background: #ffcb1254;
+    color: #eab700;
+  }
+}
+
+.active-status,
+.paid-status,
+.published-status,
+.contacted-status,
+.success-status,
+.completed-status {
+  // width: 95px;
+  display: inline-block;
+  p {
+    @extend %status;
+    background: #d0e7dc;
+    color: #319464;
+  }
+}
+
+.process-status,
+.expire-status {
+  display: inline-block;
+  p {
+    @extend %status;
+    background: #ffd9cd;
+    color: #e7400c;
+  }
+}
+
+.deactive-status {
+  display: inline-block;
+  p {
+    @extend %status;
+    background: #ffefee;
+    color: #e20000;
+  }
+}
+
+.draft-status {
+  display: inline-block;
+  p {
+    @extend %status;
+    background: #eeeeee;
+    color: #959995;
+  }
+}
+
+.off-status {
+  padding: 5px 8px;
+  @include border-radius(5px);
+  background: var(--primary-clr);
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  p {
+    color: white;
+    font-size: 11px;
+    font-weight: 500;
+    margin: 0;
+    line-height: normal;
+  }
+}
+
+.Tpending-status,
+.Tdraft-status {
+  color: #6c757d;
+}
+
+.Tprocessing-status,
+.Tcancel-status,
+.Tunpaid-status,
+.Tunsuccess-status {
+  color: #fb6131;
+}
+
+.Tdelivered-status,
+.Tactive-status,
+.Tstock-status,
+.Tpaid-status,
+.Tsuccess-status {
+  color: #589d00;
+}

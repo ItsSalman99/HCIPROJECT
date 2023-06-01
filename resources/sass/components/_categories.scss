@@ -1,0 +1,22 @@
+.header-categories {
+  .categories-row {
+    background: rgba(var(--primary-rgb-clr), 0.095);
+    padding: 10px;
+    ul {
+      li {
+        a {
+          color: #7b7b7b;
+          font-weight: 400;
+          font-size: 1rem;
+          &:hover{
+              color: var(--primary-clr);
+          }
+        }
+      }
+    }
+    &:not(:last-child){
+        border-bottom: 1px solid#E7E7E7;
+    }
+  }
+ 
+}

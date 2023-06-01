@@ -1,0 +1,79 @@
+.tabs-style-1 {
+  .tabs-links {
+    ul {
+      li {
+        button {
+          padding: 10px 30px;
+          color: var(--black-clr-1);
+          opacity: 0.5;
+          &:hover,
+          &:focus {
+            border: 1px solid transparent !important;
+          }
+          &.active {
+            position: relative;
+            border: 1px solid transparent !important;
+            color: var(--primary-clr);
+            opacity: 1;
+            &::before {
+              content: "";
+              width: 100%;
+              height: 2px;
+              background: var(--primary-clr);
+              position: absolute;
+              bottom: -2px;
+              left: 0;
+            }
+          }
+        }
+      }
+    }
+  }
+  .tab-content {
+    padding-block: 30px;
+  }
+}
+
+// tabs style 2
+.tabs-style-2 {
+  .nav {
+    flex-basis: 21%;
+    background: #f5f4f4;
+    padding-left: 20px;
+    @include border-radius(5px);
+    p {
+      padding: 15px;
+      background: var(--primary-clr);
+      color: white;
+      opacity: 1;
+      margin-left: -20px;
+      text-align: center;
+      @include border-radius(5px);
+      margin-bottom: 9px;
+    }
+    &-link {
+      padding: 15px;
+      text-align: start;
+      margin-bottom: 9px;
+      font-size: 13px;
+      color: var(--black-clr-1);
+      opacity: 0.6;
+      @include border-radius(5px);
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+
+      &:hover {
+        background: rgba(255, 255, 255, 0.8);
+      }
+      &.active {
+        background: white;
+        color: var(--primary-clr);
+        position: relative;
+        opacity: 1;
+      }
+    }
+  }
+  .tab-content {
+    flex-basis: calc(100% - 21%);
+  }
+}

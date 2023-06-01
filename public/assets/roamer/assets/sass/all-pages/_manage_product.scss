@@ -1,0 +1,33 @@
+// add product page
+.cover-product-description {
+  label {
+    margin: 0;
+  }
+}
+.copylinks {
+  li {
+    a {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      //   color: var(--black-clr-1);
+      label {
+        margin: 0;
+        cursor: pointer;
+        white-space: nowrap;
+      }
+      &:hover {
+        label {
+          color: #0068e2;
+        }
+      }
+      i {
+        color: #0068e2;
+        @include transform(rotate(45deg));
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+// end add product page

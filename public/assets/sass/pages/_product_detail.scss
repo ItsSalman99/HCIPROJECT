@@ -1,0 +1,94 @@
+.size-varients {
+  ul {
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+    li {
+      width: calc(calc(100% / 4) - 8px);
+      position: relative;
+      label {
+        padding: 19px 15px;
+        margin: 0;
+      }
+      &.disabled-varient {
+        opacity: 0.4;
+        user-select: none;
+        cursor: not-allowed;
+        pointer-events: none;
+        position: relative;
+        @include border-radius(10px);
+        overflow: hidden;
+        &::before {
+          content: "";
+          width: 100%;
+          height: 1px;
+          background: #d4d2d2;
+          position: absolute;
+          top: 50%;
+          left: 0;
+          @include transform(translateY(-50%) rotate(-25deg) scale(1.5));
+        }
+      }
+    }
+  }
+}
+.product-detail-links {
+  ul {
+    li {
+      a {
+        width: 100%;
+        justify-content: center;
+        gap: 10px;
+        padding-block: 13px;
+        img {
+          width: 20px;
+        }
+        &.gray-btn.card-icon {
+          img {
+            filter: var(--primary-filter);
+          }
+          &:hover {
+            box-shadow: none;
+            background: var(--primary-clr);
+            img {
+              filter: brightness(0) invert(1);
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+// thumb slider
+.cover-slider {
+  .slidepreview {
+    background: #f9f9f9;
+    padding: 10px;
+    height: 600px;
+    img {
+      height: 100%;
+      object-fit: contain;
+    }
+    margin-bottom: 10px;
+  }
+  .thumb-preview {
+    .swiper-slide {
+      background: #f9f9f9;
+      padding: 10px;
+    }
+  }
+}
+
+// .product-increment
+.product-increment {
+  .btn {
+    flex: 1;
+    height: 50px !important;
+  }
+  input {
+    flex: 1;
+    height: 50px;
+  }
+}

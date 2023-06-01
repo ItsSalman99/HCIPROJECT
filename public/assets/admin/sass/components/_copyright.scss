@@ -1,0 +1,12 @@
+.copyright {
+  padding-block: 10px;
+  height: 40px;
+  background: rgba(var(--primary-rgb-clr), 0.095);
+  a {
+    color: #7b7b7b;
+    font-weight: 400;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+}

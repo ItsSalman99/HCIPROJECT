@@ -1,0 +1,15 @@
+.finance-list {
+  & > ul {
+    border: 1px solid var(--border-clr);
+    @include border-radius(5px);
+    & > li {
+      padding: 1.3rem;
+      &:nth-child(odd) {
+        background: #fbfbfb;
+      }
+      &:not(:last-child) {
+        border-bottom: 1px solid var(--border-clr);
+      }
+    }
+  }
+}

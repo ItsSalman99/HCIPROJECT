@@ -1,0 +1,50 @@
+.according-style-2 {
+  .accordion-item {
+    border: 0;
+    background-color: transparent;
+    border-bottom: 1px solid var(--border-clr);
+    .accordion-header {
+      padding: 0;
+
+      button {
+        background-color: transparent;
+        position: relative;
+        color: var(--black-clr-1);
+        font-weight: normal;
+        padding: 15px 40px 15px 15px;
+        display: block;
+        line-height: normal;
+        font-weight: 500;
+        &::after {
+          content: "\e145";
+          font-family: "Material Icons";
+          font-size: 16px;
+          font-weight: normal;
+          position: absolute;
+          right: 15px;
+          top: 50%;
+          text-align: center;
+          line-height: 1.25rem;
+          background-image: none;
+          @include transform(translateY(-50%));
+        }
+        &[aria-expanded="false"]::after {
+          content: "\e15b ";
+        }
+        &:not(.collapsed) {
+          box-shadow: none;
+        }
+      }
+      &:hover {
+        button {
+          color: var(--primary-clr);
+        }
+      }
+    }
+    .accordion-body {
+      p {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

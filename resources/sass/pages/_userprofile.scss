@@ -1,0 +1,41 @@
+.tabs-v1 {
+  background: #f8f8f8;
+  padding: 2rem;
+  @include border-radius(5px);
+  border: 1px solid #eaeaea;
+  position: sticky;
+  top: 20px;
+  .nav-pills {
+    .nav-item {
+      .nav-link {
+        gap: 15px;
+        color: #5b5b5b;
+        &.active {
+          color: var(--primary-clr);
+          background-color: transparent;
+          font-weight: 600;
+          img {
+            filter: var(--primary-filter);
+          }
+        }
+      }
+    }
+  }
+}
+
+.useraddress-list {
+  .userlocation {
+    margin-top: 10px;
+  }
+  p {
+    margin: 0;
+    font-size: 13px;
+  }
+  li {
+    &:not(:last-child) {
+      border-bottom: 1px solid var(--border-clr);
+      padding-bottom: 15px;
+      margin-bottom: 20px;
+    }
+  }
+}

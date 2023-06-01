@@ -1,0 +1,26 @@
+.wallet-info {
+  padding: 2rem;
+  background: #f8f8f8;
+  @include border-radius(5px);
+  border: 1px solid #eaeaea;
+  position: sticky;
+  top: 20px;
+
+  p {
+    margin-bottom: 6px;
+  }
+}
+
+.wallet-links {
+  a {
+    padding: 10px 15px;
+  }
+  .gray-btn {
+    background: #adadad;
+    color: white;
+    &:hover {
+      background: #adadad;
+      border-color: #adadad;
+    }
+  }
+}

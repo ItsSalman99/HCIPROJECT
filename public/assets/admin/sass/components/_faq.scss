@@ -1,0 +1,80 @@
+.according-style-1 {
+  .accordion-item {
+    border: 1px solid var(--border-clr);
+    margin-bottom: 10px;
+    border-radius: 5px;
+    overflow: hidden;
+    &:hover {
+      border-color: var(--primary-clr);
+    }
+
+    .accordion-header {
+      padding: 0;
+      @include border-radius(5px);
+      button {
+        background-color: rgba(245, 245, 245, 0.2);
+        position: relative;
+        color: #7b7b7b;
+        font-weight: normal;
+        padding: 15px 40px 15px 15px;
+        display: block;
+        line-height: normal;
+        font-weight: 600;
+        font-size: 13px;
+        &::after {
+          content: "\F138";
+          font-family: "bootstrap-icons";
+          font-size: 24px;
+          font-weight: normal;
+          position: absolute;
+          right: 15px;
+          top: 50%;
+          text-align: center;
+          line-height: 1.25rem;
+          background-image: none;
+          @include transform(translateY(-50%) rotate(90deg));
+          opacity: 0.5;
+        }
+        &[aria-expanded="false"]::after {
+          content: "\F138";
+          @include transform(translateY(-50%) rotate(0deg));
+        }
+        &[aria-expanded="true"] {
+          background: var(--primary-clr);
+          color: white;
+        }
+        &:not(.collapsed) {
+          box-shadow: none;
+        }
+      }
+      ul {
+        opacity: 0;
+        visibility: hidden;
+      }
+      &:hover {
+        button {
+          color: white;
+          background: var(--primary-clr);
+        }
+        ul {
+          opacity: 1;
+          visibility: visible;
+        }
+      }
+    }
+    .accordion-body {
+      border: none;
+      p {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
+#EditprivacypolicyModal,
+#EditTermsAndConditionModal {
+  .ck.ck-editor__editable_inline {
+    min-height: 500px;
+    padding-inline: calc(var(--ck-spacing-unit) * 1.5) !important;
+  }
+}

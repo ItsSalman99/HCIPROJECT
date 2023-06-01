@@ -1,0 +1,57 @@
+.according-style-1 {
+  .accordion-item {
+    border: 1px solid var(--border-clr);
+    margin-bottom: 10px;
+
+    .accordion-header {
+      padding: 0;
+
+      @include border-radius(5px);
+      button {
+        background-color: rgba(245, 245, 245, 0.2);
+        position: relative;
+        color: #7b7b7b;
+        font-weight: normal;
+        padding: 15px 40px 15px 15px;
+        display: block;
+        line-height: normal;
+        font-weight: 600;
+        font-size: 13px;
+        &::after {
+          content: "\F138";
+          font-family: "bootstrap-icons";
+          font-size: 24px;
+          font-weight: normal;
+          position: absolute;
+          right: 15px;
+          top: 50%;
+          text-align: center;
+          line-height: 1.25rem;
+          background-image: none;
+          @include transform(translateY(-50%) rotate(90deg));
+          opacity: 0.5;
+        }
+        &[aria-expanded="false"]::after {
+          content: "\F138";
+          @include transform(translateY(-50%) rotate(0deg));
+        }
+        &:not(.collapsed) {
+          box-shadow: none;
+        }
+      }
+      &:hover {
+        button {
+          color: var(--primary-clr);
+        }
+      }
+    }
+    .accordion-body {
+      border: none;
+      padding-top: 0;
+
+      p {
+        margin-bottom: 0;
+      }
+    }
+  }
+}

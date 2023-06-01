@@ -1,0 +1,84 @@
+// add product page
+.cover-product-description {
+  label {
+    margin: 0;
+  }
+}
+.copylinks {
+  li {
+    a {
+      display: flex;
+      align-items: center;
+      gap: 5px;
+      //   color: var(--black-clr-1);
+      label {
+        margin: 0;
+        cursor: pointer;
+        white-space: nowrap;
+      }
+      &:hover {
+        label {
+          color: #0068e2;
+        }
+      }
+      i {
+        color: #0068e2;
+        @include transform(rotate(45deg));
+        opacity: 0.7;
+      }
+    }
+  }
+}
+
+// end add product page
+
+// product image
+.cover-product-image {
+  overflow: hidden;
+  overflow-x: auto;
+}
+.product-image-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  gap: 1.3px;
+  background: var(--light-gray-2);
+  .box {
+    padding: 1.2rem;
+    background: white;
+    display: flex;
+    align-items: center;
+    p {
+      margin: 0;
+      text-transform: capitalize;
+    }
+    &:nth-child(3n) {
+      grid-column: span 5;
+      overflow: hidden;
+      overflow-x: auto;
+    }
+    .image-box {
+      flex-shrink: 0;
+      label {
+        width: 105px;
+        aspect-ratio: 1 /1;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        border: 1px dashed #e7e4e4;
+        @include border-radius(5px);
+        cursor: pointer;
+        @include transition(0.2s);
+        margin: 0;
+        &:hover {
+          opacity: 0.7;
+        }
+        i {
+          color: #0068e2;
+          font-size: 26px;
+          margin-bottom: 7px;
+        }
+      }
+    }
+  }
+}

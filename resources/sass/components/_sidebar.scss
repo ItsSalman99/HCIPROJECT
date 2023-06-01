@@ -1,0 +1,178 @@
+$plate-colors: (
+  "black-plat": black,
+  "brown-plat": brown,
+  "yellow-plat": yellow,
+  "blue-plat": blue,
+  "green-plat": green,
+);
+.cover-filters {
+  .accordion-button {
+    font-size: 15px;
+  }
+  .accordion-body {
+    padding-top: 0;
+  }
+  input[type="checkbox"] {
+    width: 18px;
+    height: 18px;
+    border: 1px solid #999999;
+    margin-top: 0;
+    margin-right: 10px;
+    @include border-radius(3px !important);
+  }
+  input[type="checkbox"]:checked ~ label {
+    color: var(--primary-clr);
+    opacity: 1;
+    font-weight: 500;
+  }
+  label {
+    &.form-check-label {
+      font-weight: 400;
+      opacity: 0.53;
+      font-size: 14px;
+      text-transform: capitalize;
+      cursor: pointer;
+      margin: 0;
+      line-height: normal;
+    }
+  }
+
+  ul.list-items {
+    min-height: 52px;
+    max-height: 250px;
+    overflow: hidden;
+    overflow-y: auto;
+    &::-webkit-scrollbar {
+      width: 2px;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: #1f1f1f;
+      height: 60px;
+      border-radius: 8px;
+    }
+    &::-webkit-scrollbar-track {
+      background-color: #e2e2e2;
+    }
+
+    li {
+      margin-bottom: 10px;
+      .input-group {
+        // max-width: fit-content;
+      }
+      .form-check {
+        &:hover {
+          input[type="checkbox"] {
+            border: 1px solid var(--primary-clr);
+          }
+          label {
+            &.form-check-label {
+              opacity: 1;
+              color: var(--primary-clr);
+            }
+          }
+        }
+      }
+    }
+    &.colors-filter {
+      input {
+        -webkit-appearance: none;
+        border: none !important;
+        margin: auto;
+        position: absolute;
+        clip: rect(0, 0, 0, 0);
+        pointer-events: none;
+        left: 0px;
+      }
+      @each $key, $val in $plate-colors {
+        li {
+          position: relative;
+          padding-block: 0.2rem;
+          &.#{$key} {
+            &::before {
+              content: "";
+              width: 20px;
+              height: 20px;
+              background: $val;
+              position: absolute;
+              top: 50%;
+              left: 0;
+              border-radius: 50%;
+              transform: translateY(-50%);
+              box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.2);
+            }
+          }
+          .form-check {
+            padding-left: 2.5rem;
+            input[type="checkbox"]:checked ~ label {
+              &::before {
+                content: "\e876";
+                font-family: "Material icons";
+                font-size: 20px;
+                width: 20px;
+                position: absolute;
+                top: 50%;
+                right: 0px;
+                transform: translateY(-50%);
+              }
+            }
+          }
+        }
+      }
+    }
+    &.rating-filter {
+      input {
+        -webkit-appearance: none;
+        border: none !important;
+        margin: auto;
+        position: absolute;
+        clip: rect(0, 0, 0, 0);
+        pointer-events: none;
+        left: 0px;
+      }
+      li {
+        position: relative;
+
+        .form-check {
+          padding-left: 2px;
+          &:hover {
+            input[type="radio"] {
+              border: 1px solid var(--primary-clr);
+            }
+            label {
+              &.form-check-label {
+                opacity: 1;
+                color: var(--primary-clr);
+              }
+            }
+          }
+
+          input[type="radio"]:checked ~ label {
+            color: var(--primary-clr);
+            opacity: 1;
+            font-weight: 500;
+            &::before {
+              content: "\e876";
+              font-family: "Material icons";
+              font-size: 20px;
+              width: 20px;
+              position: absolute;
+              top: 50%;
+              right: 0;
+              transform: translateY(-50%);
+            }
+          }
+          label {
+            display: flex;
+            align-items: center;
+            gap: 3px;
+            i {
+              color: #ffa41d;
+              font-size: 20px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

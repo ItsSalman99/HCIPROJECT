@@ -1,0 +1,14 @@
+.compaign-banner {
+  h2 {
+    font-size: 23px;
+    font-weight: 600;
+    margin-bottom: 1rem;
+  }
+  & > P {
+    margin-bottom: 1.5rem;
+  }
+  img {
+    height: 331px;
+    object-fit: cover;
+  }
+}

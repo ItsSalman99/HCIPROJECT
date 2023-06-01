@@ -1,0 +1,552 @@
+%datatable-v1-layout {
+  table {
+    width: 100% !important;
+    border-spacing: 0 6px;
+    border-collapse: separate;
+    margin-top: 20px !important;
+    // margin-bottom: 3rem !important;
+
+    // background: #eee;
+    .sorting {
+      &::before,
+      &::after {
+        top: 50%;
+        transform: translateY(-70%);
+      }
+    }
+    thead {
+      tr {
+        background: white;
+        th {
+          border: none !important;
+          font-weight: 500;
+          padding: 20px !important;
+          font-size: 12px;
+          white-space: nowrap;
+          vertical-align: top;
+          color: var(--black-clr-1);
+          opacity: 0.7;
+          span {
+            color: #767b89;
+            font-size: 13px;
+            display: block;
+            white-space: nowrap;
+          }
+        }
+      }
+    }
+    tbody {
+      tr {
+        background: white;
+        &.odd,
+        &:nth-child(odd) {
+          td {
+            background-color: #fafafa !important;
+          }
+          // .sorting_1 {
+          //   background-color: transparent !important;
+          // }
+        }
+        td {
+          --border-radius: 5px;
+          --td-content-size: 12px;
+          border: none;
+          padding-block: 17px;
+          padding-left: 17px;
+          color: var(--black-clr-1);
+          font-size: var(--td-content-size);
+          border-top: 1px solid var(--border-clr);
+          border-bottom: 1px solid var(--border-clr);
+          font-weight: 500;
+          &:first-child {
+            border-left: 1px solid var(--border-clr);
+            border-top-left-radius: var(--border-radius);
+            border-bottom-left-radius: var(--border-radius);
+            padding-left: 20px;
+          }
+          &:last-child {
+            border-right: 1px solid var(--border-clr);
+            border-top-right-radius: var(--border-radius);
+            border-bottom-right-radius: var(--border-radius);
+            padding-right: 20px;
+          }
+          p {
+            margin: 0;
+            font-size: var(--td-content-size);
+          }
+          i.star-clr {
+            font-size: 13px;
+          }
+          i.close {
+            color: #ff5172;
+          }
+          i.done {
+            color: #0ccd9f;
+          }
+          .table-product-image {
+            img {
+              background: white;
+              width: 50px;
+              aspect-ratio: 1/1;
+              object-fit: contain;
+              border: 1px solid var(--border-clr);
+              @include border-radius(5px);
+              padding: 5px;
+            }
+          }
+
+          .cover-table-btn {
+            li {
+              a {
+                i {
+                  color: #777777;
+                }
+              }
+            }
+            .dropdown-menu {
+              border: none;
+              padding: 19px 25px !important;
+              box-shadow: 0px 3px 33px -1px #00000026;
+              @include border-radius(5px);
+              min-width: 172px;
+              li {
+                a {
+                  padding-left: 0;
+                  padding-right: 0;
+                  font-size: 14px;
+                  opacity: 0.7;
+                  font-weight: 400;
+                  &:hover {
+                    background: transparent;
+                    color: var(--primary-clr);
+                    margin-left: 3px;
+                  }
+                  &.delete {
+                    color: #e20000;
+                  }
+                }
+                &:not(:last-child) {
+                  margin-bottom: 10px;
+                }
+              }
+            }
+          }
+          span {
+            color: #767b89;
+            font-size: 13px;
+            display: block;
+          }
+        }
+      }
+    }
+  }
+}
+.table-res {
+  overflow: hidden;
+  overflow-x: auto;
+}
+//################# start datatable ######################
+
+.datatable-v1 {
+  #onlydatatable {
+    margin-top: 10px !important;
+  }
+  .dataTables_length {
+    display: none;
+  }
+  @extend %datatable-v1-layout;
+}
+table.dataTable tbody > tr.selected {
+  background: transparent !important;
+  td.select-checkbox {
+    &::after {
+      content: "" !important;
+      text-shadow: none !important;
+      width: 20px !important;
+      height: 20px !important;
+      background: white;
+      left: 13px !important;
+      top: 50% !important;
+      margin: 0;
+      margin-left: 10px;
+      border-radius: 6px;
+      border: 6px solid var(--primary-clr);
+      transform: translateY(-50%);
+    }
+  }
+}
+.select-checkbox {
+  &::before {
+    left: 13px !important;
+    top: 50% !important;
+    border: 2px solid #e3e9ef !important;
+    width: 20px !important;
+    height: 20px !important;
+    margin: 0 !important;
+    margin-left: 10px !important;
+    border-radius: 6px !important;
+    transform: translateY(-50%);
+    cursor: pointer;
+  }
+}
+
+div.dataTables_wrapper div.dataTables_length select {
+  width: 80px;
+  display: inline-block;
+  padding: 10px;
+  margin-left: 6px;
+  margin-right: 6px;
+  border: 1px solid #eeeeee;
+}
+
+div.dataTables_wrapper div.dataTables_filter input {
+  margin-left: 0.5em;
+  display: inline-block;
+  width: auto;
+  padding: 10px;
+  border: 1px solid #eeeeee;
+}
+
+.style-pagination {
+  ul.pagination {
+    gap: 5px;
+    flex-wrap: wrap;
+
+    .page-item {
+      line-height: inherit;
+      .page-link {
+        padding: 0;
+        border: none;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 34px;
+        aspect-ratio: 1/1;
+        color: #7b7b7b;
+        &:focus {
+          box-shadow: none;
+        }
+      }
+      &.active {
+        .page-link {
+          z-index: 3;
+          color: #fff;
+          background-color: var(--primary-clr);
+        }
+      }
+      &:nth-child(1),
+      &:nth-child(2),
+      &:nth-last-child(1),
+      &:nth-last-child(2) {
+        .page-link {
+          border: 1px solid #7b7b7b6b;
+          opacity: 0.5;
+        }
+      }
+    }
+  }
+}
+
+table.dataTable.no-footer {
+  border-bottom: none;
+}
+div.dataTables_wrapper div.dataTables_info {
+  opacity: 0.4;
+}
+table.dataTable.dtr-inline.collapsed > tbody > tr > td.dtr-control:before,
+table.dataTable.dtr-inline.collapsed > tbody > tr > th.dtr-control:before {
+  background-color: var(--primary-clr);
+}
+// cutstom paginatin
+.Cs-pagination {
+  ul {
+    display: flex;
+    gap: 4px;
+    flex-wrap: wrap;
+    white-space: nowrap;
+    justify-content: flex-end;
+    li {
+      a {
+        // padding: 12px 20px;
+        border: none;
+        border-radius: 5px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 34px;
+        // height: 40px;
+        aspect-ratio: 1 / 1;
+        color: #7b7b7b;
+        &.Cs-activepagination {
+          z-index: 3;
+          color: #fff;
+          background-color: var(--primary-clr);
+        }
+        &:not(.Cs-activepagination):hover {
+          background: #e9ecef;
+        }
+      }
+      &:nth-child(1) a {
+        border: 1px solid #7b7b7b6b;
+        opacity: 0.5;
+      }
+      &:nth-child(2) a {
+        border: 1px solid #7b7b7b6b;
+        opacity: 0.5;
+      }
+      &:nth-last-child(1) a {
+        border: 1px solid #7b7b7b6b;
+        opacity: 0.5;
+      }
+      &:nth-last-child(2) a {
+        border: 1px solid #7b7b7b6b;
+        opacity: 0.5;
+      }
+    }
+  }
+}
+
+// filter icons
+.select-icon {
+  .icon {
+    position: absolute;
+    top: 50%;
+    left: 9px;
+    @include transform(translateY(-50%));
+    i {
+      font-size: 20px;
+    }
+  }
+  .select-selected {
+    padding-left: 20px;
+  }
+}
+.Diagnosis-table {
+  .dataTables_empty {
+    opacity: 0.4;
+  }
+}
+//################# End data table ##################
+//################# start Table v1 ##################
+.table-v1 {
+  thead {
+    tr {
+      background: var(--light-gray-2);
+      overflow: hidden;
+      th {
+        color: #7b7b7b;
+        font-weight: 400;
+        font-size: 12px;
+        white-space: nowrap;
+        padding-block: 15px;
+        &:first-child {
+          padding-left: 20px;
+          border-top-left-radius: 5px;
+          border-bottom-left-radius: 5px;
+        }
+        &:last-child {
+          padding-right: 20px;
+          border-top-right-radius: 5px;
+          border-bottom-right-radius: 5px;
+        }
+      }
+    }
+  }
+  tbody {
+    tr {
+      td {
+        i {
+          font-size: 20px;
+          opacity: 0.7;
+        }
+        input {
+          min-width: 100px;
+        }
+      }
+    }
+  }
+}
+
+//################# End Table v1 ##################
+//################# STart Table v2 ##################
+.table-v2 {
+  @extend %datatable-v1-layout;
+}
+//################# End Table v2 ##################
+//################# stat Performation ##################
+.vendor-performing-table {
+  overflow: auto;
+  height: calc(593px - 4rem);
+  &::-webkit-scrollbar {
+    width: 0px;
+    height: 0px;
+  }
+  &:hover {
+    /* Scrollbar-effect------- */
+    overflow: hidden auto;
+    &::-webkit-scrollbar {
+      width: 0px;
+      height: 0px;
+    }
+    &::-webkit-scrollbar-track {
+      border-radius: 10px;
+      background-color: #e4e4e4;
+    }
+    &::-webkit-scrollbar-thumb {
+      background: var(--primary-clr);
+      border-radius: 10px;
+      transition: 0.5s;
+    }
+    &::-webkit-scrollbar-thumb:hover {
+      background: var(--primary-clr);
+      transition: 0.5s;
+    }
+  }
+  table {
+    margin: 0;
+    color: var(--black-clr-1);
+    thead {
+      position: sticky;
+      top: 0;
+      background: white;
+      z-index: 1;
+      tr {
+        th {
+          white-space: nowrap;
+        }
+        th:not(:first-child) {
+          font-weight: 400;
+          opacity: 0.6;
+          font-size: 13px;
+          padding-bottom: 20px;
+        }
+        th:first-child {
+          font-weight: 600;
+          opacity: 0.7;
+          font-size: 13px;
+          padding-bottom: 20px;
+        }
+      }
+    }
+    tbody {
+      tr {
+        td {
+          font-size: 13px;
+          font-weight: 400;
+          padding-block: 20px;
+          white-space: nowrap;
+          h6 {
+            white-space: pre-wrap;
+          }
+          p {
+            white-space: pre-wrap;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}
+//################# End performation ##################
+//################# start order table ##################
+.table-row-collapse {
+  position: relative;
+  width: 20px;
+  display: block;
+
+  aspect-ratio: 1;
+  &::before {
+    content: "\e931";
+    font-family: "Material Icons";
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 20px;
+  }
+  &[aria-expanded="true"] {
+    &::before {
+      content: "\e145";
+      top: -6px;
+    }
+  }
+}
+@media screen and (max-width: 1024px) {
+  .checkboxtable-responsive {
+    overflow: hidden;
+    overflow-x: auto;
+  }
+}
+.order-table {
+  min-height: 300px;
+  max-height: 400px;
+  overflow: hidden;
+  overflow-y: auto;
+  table {
+    margin: 0 !important;
+    thead {
+      position: sticky;
+      top: 0;
+      background: white;
+      z-index: 1;
+      tr {
+        th {
+          white-space: nowrap;
+        }
+      }
+    }
+    tbody {
+      tr {
+        td {
+          width: calc(100% / 4);
+          white-space: nowrap;
+        }
+      }
+    }
+  }
+}
+//################# End order table ##################
+//################# start product image table ##################
+.product-image-table {
+  table {
+    thead {
+      tr {
+        border-top: none;
+        th {
+          padding: 1rem;
+          opacity: 0.7;
+          font-weight: 500;
+          font-size: 13px;
+          &:nth-child(1) {
+            border-left: none;
+          }
+          &:nth-child(1),
+          &:nth-child(2) {
+            min-width: 177px;
+          }
+        }
+      }
+    }
+    tbody {
+      tr {
+        & td:nth-child(1) {
+          border-left: none;
+        }
+        & td:nth-child(1),
+        & td:nth-child(2) {
+          opacity: 0.5;
+          padding: 1rem;
+          font-weight: 400;
+          font-size: 13px;
+        }
+        & td:nth-child(3) {
+          max-width: 600px;
+
+          overflow: auto;
+        }
+      }
+    }
+  }
+}
+//################# End product image table ##################

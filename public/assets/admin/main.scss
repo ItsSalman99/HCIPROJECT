@@ -1,0 +1,161 @@
+//####################
+// START VARIABALES
+// #####################
+:root {
+  --primary-clr: #e46c3f;
+  --primary-rgb-clr: 228, 108, 63;
+  --primary-filter: invert(61%) sepia(20%) saturate(4278%) hue-rotate(331deg)
+    brightness(91%) contrast(97%);
+  --black-btn-clr: #363232;
+  --black-clr-1: #363232;
+  --heading-clr: #363232;
+  --border-clr: #efefef;
+  --sidebar-clr: #363232;
+  --side-menu-clr: #7b7b7b;
+  --light-gray-1: #fbfbfb;
+  --light-gray-2: #ececec;
+  --gray-btn: #ececec;
+  --sidebarwidth: 281px;
+  --nagativesidebarwidth: -281px;
+}
+
+//####################
+// END VARIABALES
+// #####################
+//####################
+// START IMPORT FILES
+// #####################
+@import "assets/sass/all_components";
+@import "assets/sass/all_pages";
+//####################
+// END IMPORT FILES
+// #####################
+div#frontdashboard2 {
+  @include transform(translateX(-25px));
+}
+
+.row.row-eq-height {
+  margin-bottom: 20px;
+}
+
+.row-eq-height [class*="col-"] {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+
+.primary-bg {
+  background: var(--primary-clr) !important;
+}
+
+.primary-text {
+  color: var(--primary-clr) !important;
+}
+
+.primary-anchor {
+  color: var(--primary-clr) !important;
+  &:hover {
+    color: var(--anker-hover-clr) !important;
+  }
+}
+
+.black-anchor {
+  color: var(--black-clr-1) !important;
+  &:hover {
+    color: var(--primary-clr) !important;
+  }
+}
+.lgray-bg-1 {
+  background: var(--light-gray-1);
+}
+// ACTIVE BTN
+.active-btn {
+  background: var(--primary-clr) !important;
+  color: white !important;
+}
+
+.active-text {
+  color: var(--primary-clr) !important;
+}
+
+.column-spacing {
+  [class*="col-"] > div {
+    margin: 10px;
+  }
+}
+
+// END ACTIVE BTN
+.primary-hover-clr {
+  &:hover {
+    color: var(--primary-clr) !important;
+    opacity: 1 !important;
+    i {
+      color: var(--primary-clr) !important;
+      opacity: 1 !important;
+    }
+  }
+}
+.default-anchor {
+  color: #0068e2;
+  font-weight: 400;
+  i {
+    color: #0068e2;
+  }
+  &:hover {
+    color: opacify(rgba(#0068e2, 0), 0.8);
+    i {
+      color: opacify(rgba(#0068e2, 0), 0.8);
+    }
+  }
+}
+.default-black {
+  color: var(--black-clr-1);
+  i {
+    color: var(--black-clr-1);
+  }
+  svg {
+    fill: var(--black-clr-1);
+  }
+}
+.primary-svg {
+  fill: var(--primary-clr);
+}
+//####################
+// START top NAV BAR
+// #####################
+@include toggler;
+// @include sticky-top;
+//####################
+// END top NAV BAR
+//####################
+//####################
+// start center content
+//####################
+// end map chart
+::-webkit-scrollbar {
+  width: 9px;
+  background: #efefef;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #d6d6d6;
+
+  border-radius: 8px;
+  border: 2px solid transparent;
+  background-clip: content-box;
+}
+
+::-moz-selection {
+  color: #fff;
+  background: var(--primary-clr);
+  text-shadow: none;
+}
+
+::selection {
+  color: #fff;
+  background: var(--primary-clr);
+  text-shadow: none;
+}
+
+//####################
+// END center content
+//####################

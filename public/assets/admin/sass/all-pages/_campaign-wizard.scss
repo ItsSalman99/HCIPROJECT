@@ -1,0 +1,74 @@
+.wizard-steps {
+  ul {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+    li {
+      color: var(--black-clr-1);
+      text-align: center;
+      flex-basis: 28%;
+      position: relative;
+      button {
+        padding: 0;
+        background: transparent !important;
+        margin: auto;
+        span {
+          background: #f9f9f9;
+          border: 1px solid var(--border-clr);
+          color: rgba(0, 0, 0, 0.3);
+          width: 30px;
+          aspect-ratio: 1;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          @include border-radius(50px);
+          margin: auto;
+          margin-bottom: 10px;
+          text-transform: capitalize;
+        }
+        p {
+          color: var(--black-clr-1);
+          opacity: 0.3;
+          font-weight: 500;
+          font-size: 16px;
+        }
+        &.active {
+          span {
+            background: var(--primary-clr);
+            border: 1px solid var(--primary-clr);
+            color: white;
+          }
+          p {
+            opacity: 1;
+          }
+        }
+      }
+      &:not(:first-child) {
+        button {
+          &::before {
+            background: linear-gradient(to right, transparent 50%, #e8e8e8 50%);
+            background-size: 16px 2px;
+            content: "";
+            height: 2px;
+            left: -54%;
+            position: absolute;
+            top: 14px;
+            width: 100%;
+            z-index: -1;
+          }
+          &.active {
+            &::before {
+              background: linear-gradient(
+                to right,
+                transparent 50%,
+                var(--primary-clr) 50%
+              );
+              background-size: 16px 2px;
+            }
+          }
+        }
+      }
+    }
+  }
+}

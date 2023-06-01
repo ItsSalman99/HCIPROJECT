@@ -1,0 +1,31 @@
+.revenue {
+  &-list {
+    ul {
+      & > li {
+        &:not(:last-child) {
+          margin-bottom: 10px;
+        }
+      }
+    }
+  }
+  &-box {
+    // background: #f8f8f8;
+    border: 1px solid var(--border-clr);
+    position: relative;
+    &::before {
+      content: "\F26B";
+      font-family: "bootstrap-icons";
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      color: #0ccd9f;
+      font-size: 17px;
+    }
+  }
+  &-active {
+    border-top: 4px solid #0ccd9f;
+    &::before {
+      content: "\F26A";
+    }
+  }
+}

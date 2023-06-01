@@ -1,0 +1,25 @@
+.label-v1 {
+  position: relative;
+  label {
+    position: absolute;
+    top: calc(var(--input-height) / 3.2);
+    left: 15px;
+    transition: all 200ms;
+    opacity: 0.5;
+    margin: 0;
+    font-weight: 400;
+    // z-index: 2;
+    user-select: none;
+    pointer-events: none;
+  }
+  // input {
+  //   z-index: 1;
+  //   position: relative;
+  // }
+
+  .form-control:focus + label,
+  .form-control:valid + label {
+    font-size: 75%;
+    transform: translate3d(0, -12px, 0);
+  }
+}

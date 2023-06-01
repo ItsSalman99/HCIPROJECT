@@ -1,0 +1,347 @@
+$pink: #ff5172;
+$yellow: #f0ad0d;
+
+//############################# D-Order #########################
+.D-order-info {
+  .custom-select {
+    padding: 10px 25px 10px var(--input-padding);
+    padding-block: 0;
+    padding-left: 0;
+    height: 15px;
+    border: none;
+    margin-left: 0;
+    width: 84px;
+    min-width: auto;
+    font-size: 13px;
+    margin-top: 8px;
+    .select-items {
+      min-width: auto;
+      border: none;
+      box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.08);
+      div {
+        padding: 4px 0px;
+        font-size: 13px;
+        text-align: center;
+      }
+    }
+    .select-selected {
+      padding: 0;
+      &:after {
+        top: 8px;
+        right: 0px;
+      }
+    }
+    .select-selected.select-arrow-active:after {
+      top: 1px;
+    }
+  }
+  .D-icon {
+    width: 45px;
+    aspect-ratio: 1;
+    @include border-radius(10px);
+    background: rgba(var(--primary-rgb-clr), 0.1);
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  small {
+    margin-bottom: 5px;
+  }
+  p {
+    opacity: 1;
+  }
+}
+.cancell-order-info {
+  .progress {
+    background: opacify(rgba($pink, 0.1), 0.1);
+    height: 4px;
+    .progress-bar {
+      background-color: $pink;
+    }
+  }
+  p {
+    color: $pink;
+  }
+  .Dc-icon {
+    background: opacify(rgba($pink, 0), 0.1);
+  }
+}
+.return-order-info {
+  .progress {
+    background: opacify(rgba($yellow, 0.1), 0.1);
+    height: 4px;
+    .progress-bar {
+      background-color: $yellow;
+    }
+  }
+  p {
+    color: $yellow;
+  }
+  .Dr-icon {
+    background: opacify(rgba($yellow, 0), 0.1);
+  }
+}
+//####################### blog v1 #########################
+.blog-height {
+  height: 420px;
+  overflow: hidden;
+  overflow-y: auto;
+  .blog-v1 {
+    &:not(:last-child) {
+      margin-bottom: 2.4rem;
+    }
+  }
+}
+.blog-v1 {
+  display: flex;
+  align-items: flex-start;
+  gap: 10px;
+  flex-wrap: wrap;
+  .cover-img {
+    @include border-radius(5px);
+    overflow: hidden;
+    flex-shrink: 0;
+    flex-grow: 1;
+    img {
+      height: 175px;
+      object-fit: cover;
+      aspect-ratio: 1/1;
+    }
+  }
+  p {
+    margin-bottom: 5px;
+  }
+  ul {
+    li {
+      display: inline-flex;
+      a:not(.btn-primary) {
+        color: var(--black-clr-1);
+        font-size: 16px;
+        font-weight: 600;
+        margin-bottom: 6px;
+        text-transform: capitalize;
+        width: 443px;
+        display: inline-block;
+        margin: 0;
+        margin-bottom: 4px;
+        &:hover {
+          color: var(--primary-clr);
+        }
+      }
+      a.btn-primary {
+        text-transform: uppercase;
+        font-weight: 600;
+        letter-spacing: 0.5px;
+      }
+    }
+  }
+}
+
+// tip card
+.tipcard {
+  .product-wizar {
+    ul {
+      li {
+        position: relative;
+        padding-left: 30px;
+        opacity: 0.5;
+        font-size: 13px;
+        text-transform: capitalize;
+        a {
+          color: var(--black-clr-1);
+          font-weight: 600;
+        }
+        &::before {
+          content: "";
+          width: 15px;
+          height: 15px;
+          background: white;
+          border: 1px solid rgba(123, 123, 123, 0.2);
+          @include border-radius(50%);
+          position: absolute;
+          top: 50%;
+          left: 0px;
+          @include transform(translateY(-50%));
+        }
+        &.active {
+          opacity: 1;
+          &::before {
+            background: var(--primary-clr);
+            border: 1px solid var(--primary-clr);
+          }
+        }
+        &:not(:last-child) {
+          margin-bottom: 20px;
+        }
+      }
+    }
+  }
+  h6 {
+    color: #7b7b7b;
+    font-size: 13px;
+    font-weight: 600;
+    margin-bottom: 10px;
+  }
+  p {
+    line-height: 23px;
+
+    opacity: 0.7;
+  }
+}
+
+//####################### brand box #########################
+.brand-box {
+  .cover-img {
+    margin-bottom: 15px;
+    @include border-radius(8px);
+    overflow: hidden;
+    position: relative;
+    img {
+      @include transition(0.1s);
+      height: 226px;
+    }
+    .edit-pencil {
+      li {
+        a {
+          width: 35px;
+          height: 35px;
+          background: white;
+          position: absolute;
+          top: 10px;
+          right: 10px;
+          @include border-radius(50px);
+          display: inline-flex;
+          align-items: center;
+          justify-content: center;
+          img {
+            width: 19px;
+            height: auto;
+          }
+          &:hover {
+            background: var(--primary-clr);
+            img {
+              filter: brightness(0) invert(1);
+            }
+          }
+        }
+      }
+    }
+  }
+  .content {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    margin-bottom: 2rem;
+    img {
+      flex-shrink: 0;
+      width: 45px;
+      height: 45px;
+      @include border-radius(50%);
+      object-fit: cover;
+    }
+    p {
+      margin: 0;
+    }
+    ul {
+      li {
+        line-height: normal;
+        a {
+          color: var(--black-clr-1);
+          font-size: 16px;
+          font-weight: 600;
+          margin-bottom: 6px;
+          text-transform: capitalize;
+          width: 200px;
+          display: inline-block;
+          margin: 0;
+          &:hover {
+            color: var(--primary-clr);
+          }
+        }
+      }
+    }
+  }
+  &:hover {
+    .cover-img {
+      img {
+        transform: scale(1.04);
+      }
+    }
+  }
+}
+
+//############### Media Center ######################
+.mediacenter {
+  gap: clamp(1rem, 5vw, 2.5rem);
+  &-box {
+    flex: 0 1 auto;
+    li {
+      line-height: normal;
+    }
+    a {
+      line-height: normal;
+      display: block;
+      font-weight: 400;
+      opacity: 0.8;
+      &:hover {
+        opacity: 1;
+      }
+    }
+    p {
+      opacity: 1;
+      font-weight: 600;
+    }
+    .small-product-image {
+      width: clamp(60px, 7.3vw, 117px);
+    }
+  }
+}
+
+// ############### product-board-card ###################
+.product-board-card {
+  img {
+    width: 50px;
+    aspect-ratio: 1/1;
+    border: 1px solid var(--border-clr);
+    @include border-radius(5px);
+    padding: 5px;
+  }
+  ul {
+    li {
+      padding-block: 2rem;
+      &:not(:last-child) {
+        border-bottom: 1px solid var(--border-clr);
+      }
+      &:last-child {
+        padding-bottom: 0;
+      }
+    }
+  }
+  a {
+    display: inline-flex;
+    font-size: 12px;
+  }
+}
+
+// diagnosis-card
+.diagnosis-card {
+  min-height: 300px;
+}
+
+// notification card
+.notification-list {
+  & > li {
+    &:not(:last-child) {
+      margin-bottom: 15px;
+    }
+  }
+  .svg-icon {
+    width: 46px;
+    aspect-ratio: 1;
+    @include border-radius(50px);
+    background: rgba(var(--primary-rgb-clr), 0.2);
+    display: grid;
+    place-items: center;
+  }
+}

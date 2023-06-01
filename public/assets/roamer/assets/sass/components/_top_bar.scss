@@ -1,0 +1,145 @@
+.sb-topnav .nav-link {
+  color: #767b89 !important;
+}
+
+button#sidebarToggle i {
+  font-size: 24px;
+}
+
+.profile {
+  img {
+    width: 45px;
+    height: 45px;
+    object-fit: cover;
+    @include border-radius(50px);
+  }
+  .dropdown-menu {
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.05);
+    @include border-radius(5px);
+    padding: 10px !important;
+    width: max-content;
+    li {
+      &:first-child {
+        border-bottom: 0.6px solid #d4dde8;
+        margin-bottom: 4px;
+        padding-bottom: 4px;
+        p {
+          font-size: 12px;
+        }
+      }
+      &:not(:first-child):not(:last-child) {
+        margin-top: 5px;
+        margin-bottom: 5px;
+      }
+      a {
+        &:active,
+        &.active {
+          background-color: #e9ecef;
+        }
+        padding: 7px 15px;
+        color: #7a7f8b;
+        font-size: 15px;
+        @include border-radius(5px);
+        .cover-profile-dropdown {
+          img:not([alt="student-img"]) {
+            width: 20px;
+            height: 20px;
+            object-fit: initial;
+          }
+          h6 {
+            margin: 0;
+          }
+          p {
+            font-size: 14px;
+            margin: 0;
+            line-height: initial;
+            text-transform: capitalize;
+          }
+        }
+      }
+    }
+  }
+}
+
+.bell {
+  li {
+    i {
+      color: #455560;
+    }
+  }
+  .dropdown-menu {
+    box-shadow: 0px 4px 30px -2px #0000000f;
+
+    width: 307px;
+    border: none;
+    border-radius: 13px;
+    overflow: hidden;
+    .cover-notifications {
+      height: 291px;
+      overflow-y: auto;
+      &::-webkit-scrollbar {
+        width: 9px;
+        background: #fafafa;
+      }
+      &::-webkit-scrollbar-thumb {
+        background: lightgrey;
+        height: 56px;
+        border-radius: 8px;
+        border: 2px solid transparent;
+        background-clip: content-box;
+      }
+      li {
+        a {
+          white-space: inherit;
+          padding: 15px;
+          .inner-notification {
+            h6 {
+              font-weight: 600;
+            }
+            p {
+              font-size: 13px;
+            }
+          }
+
+          &:active,
+          &:hover {
+            background-color: transparent;
+            h6 {
+              color: var(--primary-clr);
+            }
+          }
+        }
+        &:not(:last-child) {
+          border-bottom: 1px solid var(--border-clr);
+        }
+      }
+    }
+    & > div:first-child {
+      padding: 20px;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      font-size: 13px;
+      margin-bottom: 0 !important;
+      background: var(--primary-clr);
+      color: white;
+      text-transform: uppercase;
+      @include border-radius(13px);
+      img {
+        width: 20px;
+      }
+      a {
+        font-size: 10px;
+        font-weight: 400;
+        color: white;
+      }
+    }
+  }
+}
+
+.caret-none {
+  &::after {
+    display: none;
+  }
+}

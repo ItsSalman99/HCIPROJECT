@@ -1,0 +1,110 @@
+@media screen and (max-width: 1190px) {
+  .compaign-banner img {
+    height: 472px;
+    object-fit: cover;
+    object-position: -700px center;
+  }
+}
+@media screen and (max-width: 992px) {
+  /* top bar */
+  .ball .dropdown-menu {
+    transform: translate(135px, 14px);
+  }
+  .sb-topnav .nav-link {
+    color: white !important;
+  }
+  .logo-sm img {
+    width: 80px;
+    margin-left: 0px;
+  }
+  .profile img {
+    filter: inherit !important;
+    width: 30px;
+    height: 30px;
+  }
+  .sb-topnav .nav-link img {
+    filter: brightness(0) invert(1);
+  }
+  /* end topbar */
+  /* side nav */
+  .sb-topnav {
+    position: fixed;
+    width: 100%;
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.05);
+    background: var(--sidebar-clr);
+  }
+  /* end sidenav */
+  /* blog */
+  .blog-v1 ul li a:not(.btn-primary) {
+    width: 227px;
+  }
+  .blog-v1 .cover-img {
+    width: 100%;
+  }
+  div.dataTables_wrapper div.dataTables_paginate {
+    margin-top: 20px;
+  }
+  .Horizontal-label label {
+    margin-bottom: 10px;
+  }
+  .tabs-style-1 .tabs-links ul li button {
+    padding: 10px 15px;
+  }
+  .blog-v1 .cover-img img {
+    height: auto;
+  }
+  .card.campaign-period {
+    margin-top: 0rem;
+  }
+  .bazaar-chating > div:nth-child(1) {
+    flex-basis: 100%;
+  }
+  .bazaar-chating > div:nth-child(2) {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 576px) {
+  .cover-nav {
+    padding-bottom: 27vw;
+  }
+  .cover-all-content {
+    padding: 90px 20px 40px 20px !important;
+  }
+
+  .card-body {
+    padding: 1rem;
+  }
+  .gray-btn,
+  .white-outline-btn,
+  .white-btn,
+  .black-outline-btn,
+  .black-btn,
+  .secondary-outline-btn,
+  .secondary-btn,
+  .primary-outline-btn,
+  .btn-primary {
+    font-size: 0.8rem;
+  }
+  .section-title {
+    font-size: 21px;
+  }
+  .card-title {
+    font-size: 18px;
+  }
+  /* end global */
+  .compaign-banner .overlay-content {
+    left: 15px !important;
+    right: 35px !important;
+    width: auto;
+  }
+  .tabs-style-2 .nav,
+  .tabs-style-2 .tab-content {
+    flex-basis: 100%;
+  }
+  /* product image table */
+  .product-image-table table thead tr th:nth-child(1),
+  .product-image-table table thead tr th:nth-child(2) {
+    min-width: 115px;
+  }
+}

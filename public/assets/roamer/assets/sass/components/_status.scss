@@ -1,0 +1,129 @@
+%status {
+  background: #e6ebf1;
+  color: #455560;
+  margin: 0;
+  padding: 8px 17px;
+  font-size: 13px;
+  border-radius: 5px;
+  text-align: center;
+  font-weight: 500;
+  opacity: 1;
+  white-space: nowrap;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+  .svg-icon {
+    width: 21px;
+    aspect-ratio: 1;
+    @include border-radius(50px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5px;
+  }
+}
+
+.gray-status {
+  display: inline-block;
+  p {
+    @extend %status;
+  }
+}
+
+.pending-status,
+.draft-status,
+.notactive-status {
+  // width: 95px;
+  display: inline-block;
+  p {
+    @extend %status;
+  }
+}
+
+.active-status,
+.paid-status,
+.published-status,
+.contacted-status,
+.resolved-status,
+.delivered-status {
+  // width: 95px;
+  display: inline-block;
+  p {
+    @extend %status;
+    background: #d0e7dc;
+    color: #319464;
+  }
+}
+
+.process-status,
+.expire-status,
+.awaiting-reponse-status {
+  display: inline-block;
+  p {
+    @extend %status;
+    background: opacify(rgba(#e46c3f, 0.1), 0.1);
+    color: #e46c3f;
+  }
+}
+
+.ready-status,
+.scheduled-status,
+.available-status {
+  //  width: 95px;
+  display: inline-block;
+  p {
+    @extend %status;
+    background: #dcecff;
+    color: #318cf8;
+    .svg-icon {
+      background-color: #318cf8;
+    }
+  }
+}
+
+.deactive-status,
+.unpublished-status,
+.delivery-failed-status {
+  display: inline-block;
+  p {
+    @extend %status;
+    background: #fed7df;
+    color: #ff5172;
+  }
+}
+.registeration-progress-status {
+  display: inline-block;
+  p {
+    @extend %status;
+    background: #fac850;
+    color: white;
+  }
+}
+
+// Text Status
+.Torder-status {
+  color: #00ab6f;
+}
+
+.Tpayment-status {
+  color: #f6821f;
+}
+
+.Treturn-status {
+  color: #f2c94c;
+}
+
+.Tdelivery-status,
+.Tbill-status {
+  color: #1f92f6;
+}
+
+.Tother-status,
+.Tsaleorder-status {
+  color: #e91f22;
+}
+
+.Tanchor-clr {
+  color: #2d9cdb;
+}

@@ -1,0 +1,122 @@
+.swiper {
+  width: 100%;
+  height: 100%;
+}
+
+.slider-img {
+  img {
+    aspect-ratio: 3/1;
+    // height: 426px;
+    object-fit: cover;
+  }
+}
+.overlay-slider-content {
+  position: absolute;
+  top: 50%;
+  left: 0;
+  width: 100%;
+  @include transform(translateY(-50%));
+  h1 {
+    font-size: 3rem;
+    font-weight: 600;
+  }
+}
+
+.bullet-v1 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  .swiper-pagination-bullet {
+    background: white;
+    opacity: 0.2;
+  }
+  .swiper-pagination-bullet-active {
+    opacity: 1;
+    width: 13px;
+    height: 13px;
+  }
+}
+
+// swiper arrows
+// .swiper-wrapper {
+//   padding-block: 3rem;
+// }
+
+// .swiper-pagination-bullet {
+//   background: var(--primary-clr);
+//   opacity: 0.3;
+// }
+
+// .swiper-pagination-bullet-active {
+//   background: var(--primary-clr);
+//   width: 20px;
+//   border-radius: 50px;
+//   opacity: 1;
+// }
+
+.swiper-button-next,
+.swiper-button-prev {
+  top: 35%;
+  &::after {
+    position: absolute;
+    font-family: "Material Icons";
+    font-size: 24px;
+    text-transform: none !important;
+    letter-spacing: 0;
+    text-transform: none;
+    font-variant: initial;
+    line-height: 1;
+    // background: #F4F4F2;
+    color: var(--primary-clr);
+    width: auto;
+    height: auto;
+
+    @include border-radius(50px);
+  }
+}
+
+.cover-slider {
+  [aria-disabled="false"] {
+    &::before {
+      content: "";
+      width: 52px;
+      height: 300px;
+      background: linear-gradient(
+        270deg,
+        #ffffff 5.56%,
+        rgba(255, 255, 255, 0) 100%
+      );
+      position: absolute;
+      top: -100px;
+      right: -22px;
+    }
+  }
+  [aria-disabled="true"] {
+    opacity: 0.6;
+    &::before {
+      display: none;
+    }
+  }
+}
+.swiper-button-next {
+  right: 20px;
+  &::after {
+    content: "arrow_forward_ios";
+  }
+}
+
+.swiper-button-prev {
+  left: 20px;
+  &::after {
+    content: "arrow_back_ios";
+  }
+  &::before {
+    right: inherit !important;
+    left: -25px;
+    background: linear-gradient(
+      -270deg,
+      #ffffff 5.56%,
+      rgba(255, 255, 255, 0) 100%
+    ) !important;
+  }
+}

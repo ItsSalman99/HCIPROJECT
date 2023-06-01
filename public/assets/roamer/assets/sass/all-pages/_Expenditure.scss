@@ -1,0 +1,61 @@
+.Expenditure-image-area {
+  --text-spacing: 4px;
+  img {
+    width: 100px;
+    aspect-ratio: 1;
+    @include border-radius(50%);
+    object-fit: cover;
+  }
+  p {
+    margin-bottom: var(--text-spacing);
+  }
+  h5 {
+    font-size: 20px;
+    margin-bottom: var(--text-spacing);
+  }
+  .expenditure-btn,
+  .topup-btn {
+    border: 1px solid var(--primary-clr);
+    background: var(--primary-clr);
+    @include border-radius(5px);
+    button {
+      color: white;
+      border: none !important;
+      background: transparent;
+      gap: 10px;
+    }
+    & > button:nth-child(1) {
+      padding: 12px 20px;
+      i {
+        width: 20px;
+        aspect-ratio: 1;
+        @include border-radius(50px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: white;
+        color: var(--primary-clr);
+      }
+    }
+    & > button:nth-child(2) {
+      padding: 12px 10px;
+      background: rgba(0, 0, 0, 0.1);
+    }
+    .dropdown-menu {
+      box-shadow: 0px 3px 33px -1px #00000026;
+      padding: 2rem !important;
+      border-color: var(--border-clr);
+      min-width: 250px;
+      margin-block: 10px !important;
+    }
+  }
+  .topup-btn {
+    background: seagreen;
+    border: 1px solid seagreen;
+    & > button:nth-child(1) {
+      i {
+        color: seagreen;
+      }
+    }
+  }
+}

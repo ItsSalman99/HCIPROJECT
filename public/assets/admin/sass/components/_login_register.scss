@@ -1,0 +1,73 @@
+.login-register {
+  &-body {
+    min-height: 100vh;
+  }
+  &-topbar {
+    padding-block: 10px;
+    height: 40px;
+    background: #363232;
+    a {
+      color: white;
+      font-weight: 500;
+      display: flex;
+      align-items: center;
+      gap: 6px;
+      &:hover {
+        color: var(--primary-clr);
+        svg {
+          filter: var(--primary-filter);
+        }
+      }
+    }
+  }
+  &-outer {
+    // min-height: 100vh;
+    padding-block: 2rem;
+    width: 95%;
+    flex-basis: 100%;
+    max-width: 490px;
+    display: flex;
+    align-items: center;
+    margin: auto;
+    min-height: calc(100vh - 80px);
+    &.register-width {
+      max-width: 890px;
+    }
+  }
+
+  &-inner {
+    width: 100%;
+    & > img {
+      display: table;
+      width: 200px;
+      margin: auto;
+      margin-bottom: 40px;
+    }
+    .form-area {
+      .card {
+        .card-body {
+          padding: clamp(2rem, 5vw, 4rem);
+          .card-title {
+            font-size: 26px;
+            font-weight: 600;
+          }
+        }
+        input:not([type="checkbox"]):not([type="radio"]) {
+          min-height: 49px;
+        }
+        .custom-select {
+          height: 49px;
+        }
+      }
+    }
+  }
+}
+
+.iti input,
+.iti input[type="tel"],
+.iti input[type="text"] {
+  color: #7b7b7b !important;
+  &::placeholder {
+    color: #7b7b7b;
+  }
+}
